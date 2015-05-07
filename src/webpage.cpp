@@ -1076,19 +1076,19 @@ qreal stringToPointSize(const QVariantMap &map, const QString &string)
 
     if (format == "mm") {
         value.chop(2);
-        return value.toDouble() * 72.0 / 25.4;
+        return value.toDouble() * 96.0 / 25.4;
     } else if (format == "cm") {
         value.chop(2);
-        return value.toDouble() * 72.0 / 2.54;
+        return value.toDouble() * 96.0 / 2.54;
     } else if (format == "in") {
         value.chop(2);
-        return value.toDouble() * 72.0;
+        return value.toDouble() * 96.0;
     } else if (format == "px") {
         value.chop(2);
-        return value.toDouble() * 72.0 / getPrintDpi(map) / 2.54;
+        return value.toDouble() * 96.0 / getPrintDpi(map) / 2.54;
     }
 
-    return value.toDouble() * 72.0 / getPrintDpi(map) / 2.54;
+    return value.toDouble() * 96.0 / getPrintDpi(map) / 2.54;
 }
 
 qreal printMargin(const QVariantMap &map, const QString &key)
